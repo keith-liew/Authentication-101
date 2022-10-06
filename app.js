@@ -8,6 +8,11 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));
 app.set("view engine", "ejs");
 
+require("./config/database");
+const User = require("./models/User");
+
+//passport config
+
 app.use(require("./routes"));
 
 app.listen(3000, () => {
