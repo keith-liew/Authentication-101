@@ -6,4 +6,4 @@ const userSchema = new mongoose.Schema({
     secrets: [String]
 });
 
-module.exports = mongoose.model("User",userSchema);
+module.exports = mongoose.model("User", userSchema);
