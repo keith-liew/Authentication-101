@@ -24,8 +24,12 @@ router.post("/register", (req, res) => {
             console.log(err.message);
             res.redirect("/register");
         } else {
-            passport.authenticate("local")(req, res, () => {
-                res.redirect("/secrets");
+            req.login(user, function (err){
+                if (err){
+                    console.log(err.message);
+                } else {
+                    res.redirect("/secrets");
+                }
             })
         }
     });
