@@ -12,15 +12,21 @@ app.use(express.static("public"));
 app.set("view engine", "ejs");
 app.use(methodOverride("_method"));
 
-const connection = require("./config/database");
-const User = require("./models/User");
+require("./config/database");
 const MongoStore = require("connect-mongo");
+
+let dbString = "";
+if(process.env.ENVIRONMENT === "production") {
+    dbString = process.env.MONGODB_ATLAS_URL;
+} else {
+    dbString = "mongodb://localhost:27017/authdb";
+}
 
 app.use(session({
     secret: process.env.SECRET,
     resave: false,
     saveUninitialized: false,
-    store: MongoStore.create({ mongoUrl: process.env.MONGODB_STRING}),
+    store: MongoStore.create({ mongoUrl: dbString}),
     cookie: {
         maxAge: 1000 * 60 * 60
     }
@@ -31,6 +37,6 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(require("./routes"));
 
-app.listen(3000, () => {
+app.listen(process.env.PORT || 3000, () => {
     console.log("Server started on port 3000");
 })
