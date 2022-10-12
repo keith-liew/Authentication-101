@@ -14,12 +14,22 @@
       <form action="/submit" method="POST">
 
         <div class="form-group">
-          <input type="text" class="form-control text-center" name="secret" placeholder="What's your secret?">
+          <input type="text" class="form-control text-center" name="secret" placeholder="What's your secret?" required>
         </div>
         <button type="submit" class="btn btn-dark">Submit</button>
+        <a class="btn btn-light btn-outline-dark" href="/secrets" role="button">Cancel</a>
       </form>
-
-
+      <hr>
+      <h4 class="display-4">Your record</h4>
+      <% if(secrets.length === 0){%>
+        <p class="secret-text">NONE</p>
+        <% } else {%>
+          <% secrets.forEach((secret)=>{ %>
+            <form action="/secret/<%=secret%>?_method=DELETE" method="POST">
+            <p class="secret-text"><%=secret%><button class="btn btn-danger delete-btn" action="submit">-</button></p>
+            </form>
+          <%})%>  
+        <%}%>
     </div>
   </div>
-<%- include('partials/footer') %>
+  <%- include('partials/footer') %>
