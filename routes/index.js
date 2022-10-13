@@ -44,7 +44,11 @@ router.get("/secrets", (req, res) => {
 });
 
 router.get("/submit", (req, res) => {
-    res.render("submit");
+    if (req.isAuthenticated()) {
+        res.render("submit");
+    } else {
+        res.redirect("/login");
+    }
 });
 
 router.get("/logout", (req, res) => {
