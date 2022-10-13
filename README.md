@@ -79,7 +79,7 @@ Project is: _complete_
 ```javascript
 md5(req.body.password)
 ```
-- Use mongoose-encryption plugin setting to handle the data encryption and decryption
+- Use md5 package to hash user password before saving into database
 ```javascript
 MongoDB User Document
   {
