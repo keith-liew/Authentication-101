@@ -61,8 +61,8 @@ router.get("/secrets", (req, res) => {
     res.render("secrets");
 });
 
-router.get("/submit", (req, res) => {
-    res.render("submit");
+router.get("/logout", (req, res) => {
+    res.render("logout");
 });
 
 module.exports = router;
