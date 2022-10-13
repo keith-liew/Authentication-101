@@ -14,6 +14,7 @@
 * [Lesson Learned](#lesson-learned)
 * [Acknowledgements](#acknowledgements)
 * [Postscript](#p.s.)
+* [Table](#table)
 
 
 ## General Information
@@ -138,3 +139,17 @@ Project is: _complete_
 - Facebook redirect url from the demo is not available to the public.
 - It is working fine in local environment, but not in hosting site
 - Because Meta is blocking the access from public unless the App Advance Access setting is fullfilled
+
+### Table
+| Branches               | Username + Password | Database Encryption | Password Hashing | Session | JWT | Oauth | 
+| ---------------------- | ------------------- | ---------- | ------- | ------- | --- | ----- |
+| authentication-level-1 | :heavy_check_mark:  |
+| authentication-level-2 | :heavy_check_mark:  |:heavy_check_mark:|
+| authentication-level-3 | :heavy_check_mark:  | | :heavy_check_mark:|
+| authentication-level-3-bcrypt | :heavy_check_mark: | | :heavy_check_mark:
+| authentication-level-3-crypto | :heavy_check_mark: | | :heavy_check_mark:
+| authentication-level-4-local-mongoose | :heavy_check_mark: | | :heavy_check_mark: | :heavy_check_mark:
+| authentication-level-4-local-strategy | :heavy_check_mark:| | :heavy_check_mark: | :heavy_check_mark:
+| authentication-level-5-jwt | :heavy_check_mark: | | :heavy_check_mark: | | :heavy_check_mark:
+| authentication-level-6-oauth | :heavy_check_mark: | | :heavy_check_mark: |  :heavy_check_mark: | | :heavy_check_mark:
+| master                 | :heavy_check_mark: | | :heavy_check_mark: |  :heavy_check_mark: | | :heavy_check_mark:
