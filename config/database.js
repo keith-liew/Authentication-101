@@ -2,7 +2,7 @@ require("dotenv").config();
 
 const mongoose = require("mongoose");
 
-mongoose.connect(process.env.MONGODB_STRING);
+mongoose.connect("mongodb://localhost:27017/authdb");
 const db = mongoose.connection;
 db.on("error", (error) => { console.log(error) });
 db.on("connected", () => { console.log("Connected to database") });
