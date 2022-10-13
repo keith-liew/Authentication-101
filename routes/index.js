@@ -75,7 +75,7 @@ router.get("/secrets", passport.authenticate("jwt", { session: false }), (req, r
     res.render("secrets");
 });
 
-router.get("/submit", (req, res) => {
+router.get("/submit", passport.authenticate("jwt", { session: false }), (req, res) => {
     res.render("submit");
 });
 
